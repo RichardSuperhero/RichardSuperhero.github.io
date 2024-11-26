@@ -23,10 +23,10 @@ const SpaceBackground = () => {
         mountRef.current.appendChild(renderer.domElement);
 
         // Lighting
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.4); // Reduced from 0.8 to 0.4
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.1); // Keep low for asteroids
         scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8); // Reduced from 1.2 to 0.8
-        directionalLight.position.set(10, 20, 10);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.7);
+        directionalLight.position.set(10, 200, 100);
         scene.add(directionalLight);
 
         // Create Earth
@@ -34,13 +34,20 @@ const SpaceBackground = () => {
         const earthGeometry = new THREE.SphereGeometry(2000, 64, 64);
         const earthMaterial = new THREE.MeshStandardMaterial({
             map: earthTexture,
-            emissive: 0x000000,
+            emissive: 0x112244,  // Added slight blue emissive color
+            emissiveIntensity: 0.1,  // Low intensity emissive
             metalness: 0.5,
             roughness: 7
         });
         const earth = new THREE.Mesh(earthGeometry, earthMaterial);
         earth.position.set(0, 0, -3000);
-        earth.rotation.y = Math.PI + Math.PI/6 + Math.PI/9; // Start with Africa facing camera, offset by 50 degrees total
+        earth.rotation.y = Math.PI + Math.PI/6 + Math.PI/9;
+
+        // Add point light specifically for Earth
+        const earthLight = new THREE.PointLight(0xffffff, 0.4);
+        earthLight.position.set(0, 0, -2000); // Position in front of Earth
+        scene.add(earthLight);
+        
         scene.add(earth);
 
         // Create asteroids
@@ -251,7 +258,7 @@ const SpaceBackground = () => {
             gradient.addColorStop(0.2, '#16213e');  // Dark navy blue
             gradient.addColorStop(0.4, '#1b2a4a');  // Navy blue
             gradient.addColorStop(0.6, '#2c3e50');  // Dark slate
-            gradient.addColorStop(1, '#0f172a');    // Very dark slate blue
+            gradient.addColorStop(1, '#42336b');    // Very dark slate blue
             
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);

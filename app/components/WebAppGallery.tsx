@@ -14,8 +14,7 @@ export default function WebAppGallery() {
     },
     {
       title: "AI-Powered Chatbot",
-      description: "An intelligent
-conversational interface for customer support",
+      description: "An intelligent conversational interface for customer support",
       image: "/placeholder.svg?height=300&width=500",
       link: "/web-app/chatbot"
     },
@@ -68,4 +67,3 @@ conversational interface for customer support",
     </section>
   )
 }
-

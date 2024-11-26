@@ -30,7 +30,7 @@ const SpaceBackground = () => {
         scene.add(directionalLight);
 
         // Create Earth
-        const earthTexture = new THREE.TextureLoader().load("https://st4.depositphotos.com/25825766/39166/i/1600/depositphotos_391666806-stock-photo-world-texture-satellite-image-earth.jpg");
+        const earthTexture = new THREE.TextureLoader().load("/images/realistic_map_of_earth.jpg");
         const earthGeometry = new THREE.SphereGeometry(2000, 64, 64);
         const earthMaterial = new THREE.MeshStandardMaterial({
             map: earthTexture,

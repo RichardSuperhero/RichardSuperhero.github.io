@@ -23,9 +23,9 @@ const SpaceBackground = () => {
         mountRef.current.appendChild(renderer.domElement);
 
         // Lighting
-        const ambientLight = new THREE.AmbientLight(0x808080); // Brighter ambient light
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.4); // Reduced from 0.8 to 0.4
         scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4); // Increased intensity
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8); // Reduced from 1.2 to 0.8
         directionalLight.position.set(10, 20, 10);
         scene.add(directionalLight);
 
@@ -241,17 +241,17 @@ const SpaceBackground = () => {
         // Create gradient canvas with website colors
         function createGradientCanvas() {
             const canvas = document.createElement('canvas');
-            canvas.width = 2;
-            canvas.height = 2;
+            canvas.width = 512;
+            canvas.height = 512;
             
             const ctx = canvas.getContext('2d')!;
             const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
             
-            gradient.addColorStop(0, '#000000');     // Black
-            gradient.addColorStop(0.01, '#000000');  // Extended black at 3%
-            gradient.addColorStop(0.6, '#191837');   // Dark blue-purple
-            gradient.addColorStop(0.8, '#6c35a6');     // Deep purple
-            gradient.addColorStop(1, '#ffffff');
+            gradient.addColorStop(0, '#1a1a2e');    // Very dark blue
+            gradient.addColorStop(0.2, '#16213e');  // Dark navy blue
+            gradient.addColorStop(0.4, '#1b2a4a');  // Navy blue
+            gradient.addColorStop(0.6, '#2c3e50');  // Dark slate
+            gradient.addColorStop(1, '#0f172a');    // Very dark slate blue
             
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);

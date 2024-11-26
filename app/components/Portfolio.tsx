@@ -84,7 +84,7 @@ export default function Portfolio() {
     {
       title: "Customer Convenience in Travel",
       description: "How the travel and leisure sector can leverage customer convenience",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/cm customer convenience is king.PNG",
       link: "https://www.bizcommunity.com/Article/196/747/234238.html",
       company: "CM.com"
     },
@@ -98,7 +98,7 @@ export default function Portfolio() {
     {
       title: "Customer Loyalty in Retail",
       description: "4 things customer service and retail brands get wrong about loyalty",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/customer loyalty.jpg",
       link: "https://www.smetechguru.co.za/4-things-customer-service-and-retail-brands-get-wrong-about-customer-loyalty/",
       company: "CM.com"
     },
@@ -120,7 +120,7 @@ export default function Portfolio() {
     {
       title: "Organizations Future Fit",
       description: "How organisations can stay future fit in a changing landscape",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/future fit.webp",
       link: "https://www.bizcommunity.com/Article/196/11/215171.html",
       company: "SEACOM"
     },
@@ -141,14 +141,14 @@ export default function Portfolio() {
     {
       title: "Networks and the Metaverse",
       description: "Are local networks ready for the metaverse?",
-      image: "https://i.imghippo.com/files/UBul1186IPI.jpg",
+      image: "https://i.imghippo.com/files/tboo7386Ov.gif",
       link: "https://www.bizcommunity.com/Article/196/663/226033.html",
       company: "SEACOM"
     },
     {
       title: "The Quantum Internet",
       description: "A glimpse at the future of connectivity",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/quantum internet.PNG",
       link: "https://www.smetechguru.co.za/the-quantum-internet-a-glimpse-at-the-future-of-connectivity/",
       company: "SEACOM"
     },
@@ -156,7 +156,7 @@ export default function Portfolio() {
     {
       title: "Social Media for Good",
       description: "Using social media as a source for good",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/fb social media.PNG",
       link: "https://www.pressreader.com/zimbabwe/newsday-zimbabwe/20211224/281685438168909",
       company: "Meta"
     },
@@ -171,14 +171,14 @@ export default function Portfolio() {
     {
       title: "HPE SimpliVity Data Centre",
       description: "Get More Out Of Your Data Centre For Less",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/hpe simplivity.jpg",
       link: "https://tarsusdistribution.co.za/get-more-out-of-your-data-centre-for-less-with-hpe-simplivity/",
       company: "Tarsus Distribution"
     },
     {
       title: "HP Neverstop Laser",
       description: "The Printer That Pays For Itself",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/hp neverstop.jpg",
       link: "https://tarsusdistribution.co.za/hp-neverstop-laser-the-printer-that-pays-for-itself/",
       company: "Tarsus Distribution"
     },
@@ -193,7 +193,7 @@ export default function Portfolio() {
     {
       title: "LG UltraGear Gaming Monitors",
       description: "Why LG UltraGear monitors are geared for the Gaming Age",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/lg ultragear monitors.PNG",
       link: "https://reframed.co/why-lg-ultragear-monitors-are-geared-for-the-gaming-age/",
       company: "LG Electronics"
     },
@@ -207,14 +207,14 @@ export default function Portfolio() {
     {
       title: "HVAC Energy Efficiency",
       description: "The role of HVAC in energy efficiency and workplace productivity",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/role of hvac lg.PNG",
       link: "https://www.bizcommunity.com/Article/196/704/232994.html",
       company: "LG Electronics"
     },
     {
       title: "Energy-Efficient Cooling",
       description: "How to stay cool the energy-efficient way",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/stay cool lg.jpg",
       link: "https://www.engineeringnews.co.za/article/how-to-stay-cool-the-energy-efficient-way-2022-10-27/rep_id:4136",
       company: "LG Electronics"
     },
@@ -229,21 +229,21 @@ export default function Portfolio() {
     {
       title: "School Safety Solutions",
       description: "How a Single Point of Entry Supports Safe School Environments",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/single point of entry axis.PNG",
       link: "https://securityreviewmag.com/?p=24924",
       company: "Axis Communications"
     },
     {
       title: "Estate Security Upgrade",
       description: "Estate d'Afrique security upgrade case study",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/axis case.PNG",
       link: "https://www.securitysa.com/15843r",
       company: "Axis Communications"
     },
     {
       title: "Video Surveillance Trust",
       description: "Maintaining trust through signed video technology",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/trust axis.PNG",
       link: "http://www.techsmart.co.za/news/Open-access--Maintaining-trust-in-video-surveillance-through-signed-video",
       company: "Axis Communications"
     },
@@ -258,7 +258,7 @@ export default function Portfolio() {
     {
       title: "Mining Sector Sustainability",
       description: "Climate change and the mining sector financial sustainability",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/climate change mining.jpg",
       link: "https://www.bizcommunity.com/Article/196/608/215529.html",
       company: "Exxaro"
     }

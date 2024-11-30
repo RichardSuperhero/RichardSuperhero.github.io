@@ -23,7 +23,7 @@ export default function Header() {
         <li><a href="#experience" className="text-white hover:text-[#c55e73] transition-colors duration-300">Experience</a></li>
         <li><a href="#portfolio" className="text-white hover:text-[#c55e73] transition-colors duration-300">Portfolio</a></li>
         <li><a href="#press" className="text-white hover:text-[#c55e73] transition-colors duration-300">Press</a></li>
-        <li><a href="/web-app-gallery" className="text-white hover:text-[#c55e73] transition-colors duration-300">Web App Gallery</a></li>
+        <li><a href="/web-app-gallery" className="text-white hover:text-[#c55e73] transition-colors duration-300">Gallery</a></li>
         <li><a href="#contact" className="text-white hover:text-[#c55e73] transition-colors duration-300">Contact</a></li>
       </ul>
       <div className="h-1 w-full bg-gradient-to-r from-[#b66091] via-[#c55e73] to-[#54626f] absolute bottom-0 left-0"></div>
@@ -31,4 +31,3 @@ export default function Header() {
   </header>
   )
 }
-

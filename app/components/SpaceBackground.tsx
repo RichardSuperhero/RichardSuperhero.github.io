@@ -25,7 +25,7 @@ const SpaceBackground = () => {
         // Lighting
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.1); // Keep low for asteroids
         scene.add(ambientLight);
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.7);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1.4);
         directionalLight.position.set(10, 200, 100);
         scene.add(directionalLight);
 
@@ -35,7 +35,7 @@ const SpaceBackground = () => {
         const earthMaterial = new THREE.MeshStandardMaterial({
             map: earthTexture,
             emissive: 0x112244,  // Added slight blue emissive color
-            emissiveIntensity: 0.1,  // Low intensity emissive
+            emissiveIntensity: 0.4,  // Low intensity emissive
             metalness: 0.5,
             roughness: 7
         });

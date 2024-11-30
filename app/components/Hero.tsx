@@ -210,7 +210,8 @@ export default function Hero() {
                 improving industry <strong>credibility</strong>,
               </span>
               <span className="block">
-                and transforming content into a competitive <strong>advantage</strong>.
+                and transforming <strong>content</strong> 
+                <br></br>into a competitive <strong>advantage</strong>.
               </span>
             </p>
           </motion.div>

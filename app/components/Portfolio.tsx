@@ -6,49 +6,50 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Portfolio() {
-  const [showAll, setShowAll] = useState(false)
+  const [expandedCompanies, setExpandedCompanies] = useState<Record<string, boolean>>({ 'PwC': true })
+  const [showMoreCompany, setShowMoreCompany] = useState<Record<string, boolean>>({})
 
   const portfolioItems = [
     // PwC Articles
     {
       title: "Africa Cloud Business Survey",
       description: "Comprehensive analysis of cloud adoption trends across Africa",
-      image: "https://i.imghippo.com/files/fbs5066plc.jpg",
+      image: "/images/pwc cloud business survey.PNG",
       link: "https://www.pwc.co.za/en/publications/africa-cloud-business-survey.html",
       company: "PwC"
     },
     {
       title: "Tech-Enabled Digital Transformation",
       description: "Insights on digital transformation strategies and implementation",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/tech transformation pwc.PNG",
       link: "https://www.pwc.co.za/en/publications/africa-business-agenda/tech-enabled-digital-transformation.html",
       company: "PwC"
     },
     {
       title: "Economic Outlook 2024",
       description: "Analysis of economic trends and forecasts for 2024",
-      image: "/placeholder.svg?height=200&width=300",
-      link: "https://www.pwc.com/mt/en/publications/other/economic-outlook-2024.html",
+      image: "/images/economic outlook.PNG",
+      link: "https://www.strategyand.pwc.com/a1/en/insights/south-africa-economic-outlook.html",
       company: "PwC"
     },
     {
       title: "Building Public Trust Through Tax Reporting 2024",
       description: "Insights on transparent tax practices and reporting",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/tax transparency pwc.PNG",
       link: "https://www.pwc.co.za/en/press-room/building-public-trust-through-tax-reporting-2024.html",
       company: "PwC"
     },
     {
       title: "SA Major Banks Analysis",
       description: "Comprehensive analysis of South African banking sector",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/family bar pwc.PNG",
       link: "https://www.pwc.co.za/en/press-room/sa-major-banks-analysis-jan-june-2024.html",
       company: "PwC"
     },
     {
       title: "Africa NextGen Survey 2024",
       description: "Insights into next generation perspectives across Africa",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/pwc next gen.PNG",
       link: "https://www.pwc.co.za/en/press-room/africa-nextgen-survey-2024.html",
       company: "PwC"
     },
@@ -62,7 +63,7 @@ export default function Portfolio() {
     {
       title: "Family Business Barometer 2023",
       description: "Insights into family-owned businesses and their dynamics",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/family bar pwc.PNG",
       link: "https://www.pwc.co.za/en/press-room/family-barometer-2023.html",
       company: "PwC"
     },
@@ -77,28 +78,28 @@ export default function Portfolio() {
     {
       title: "Customer Success: Jacaranda Health",
       description: "Case study on healthcare customer success implementation",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/jacaranda cmcom.PNG",
       link: "https://www.cm.com/en-za/about-cm/our-customers/jacaranda-healthcare/",
       company: "CM.com"
     },
     {
       title: "Customer Convenience in Travel",
       description: "How the travel and leisure sector can leverage customer convenience",
-      image: "/images/cm customer convenience is king.PNG",
+      image: "/images/travel cmcom.PNG",
       link: "https://www.bizcommunity.com/Article/196/747/234238.html",
       company: "CM.com"
     },
     {
       title: "Customer Experience in Financial Services",
       description: "Today's challenges and opportunities in financial services CX",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/cx in finance cmcom.PNG",
       link: "https://www.bizcommunity.com/Article/196/513/228273.html",
       company: "CM.com"
     },
     {
       title: "Customer Loyalty in Retail",
       description: "4 things customer service and retail brands get wrong about loyalty",
-      image: "/images/customer loyalty.jpg",
+      image: "/images/customer loyalty.PNG",
       link: "https://www.smetechguru.co.za/4-things-customer-service-and-retail-brands-get-wrong-about-customer-loyalty/",
       company: "CM.com"
     },
@@ -106,21 +107,21 @@ export default function Portfolio() {
     {
       title: "The End of Third-Party Cookies",
       description: "What businesses need to know about the future of tracking",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/3rd party cookies.PNG",
       link: "https://mediaupdate.co.za/marketing/151495/the-end-of-third-party-cookies-what-businesses-need-to-know",
       company: "SEACOM"
     },
     {
       title: "Technology in Uganda's Economy",
       description: "Technology is key to transforming Uganda's informal economy",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/uganda seacom.PNG",
       link: "https://www.busiweek.com/technology-key-to-transforming-ugandas-informal-economy/",
       company: "SEACOM"
     },
     {
       title: "Organizations Future Fit",
       description: "How organisations can stay future fit in a changing landscape",
-      image: "/images/future fit.webp",
+      image: "/images/future fit.PNG",
       link: "https://www.bizcommunity.com/Article/196/11/215171.html",
       company: "SEACOM"
     },
@@ -134,14 +135,14 @@ export default function Portfolio() {
     {
       title: "5G And Fibre in South Africa",
       description: "Why we need both technologies to drive connectivity",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/steve briggs 5g seacom.PNG",
       link: "https://techfinancials.co.za/2021/03/30/5g-and-fibre-why-we-need-both-to-drive-connectivity-in-south-africa/",
       company: "SEACOM"
     },
     {
       title: "Networks and the Metaverse",
       description: "Are local networks ready for the metaverse?",
-      image: "https://i.imghippo.com/files/tboo7386Ov.gif",
+      image: "/placeholder.svg?height=200&width=300",
       link: "https://www.bizcommunity.com/Article/196/663/226033.html",
       company: "SEACOM"
     },
@@ -164,21 +165,21 @@ export default function Portfolio() {
     {
       title: "Hyperconvergence Infrastructure",
       description: "What It Is and How To Use it to unlock business value",
-      image: "/placeholder.svg?height=200&width=300",
+      image: "/images/hpe simplivity.jpg",
       link: "https://tarsusdistribution.co.za/hyperconvergence-infrastructure-what-it-is-and-how-to-use-it-to-unlock-business-value/",
       company: "Tarsus Distribution"
     },
     {
       title: "HPE SimpliVity Data Centre",
       description: "Get More Out Of Your Data Centre For Less",
-      image: "/images/hpe simplivity.jpg",
+      image: "/images/hpe simplivity.PNG",
       link: "https://tarsusdistribution.co.za/get-more-out-of-your-data-centre-for-less-with-hpe-simplivity/",
       company: "Tarsus Distribution"
     },
     {
       title: "HP Neverstop Laser",
       description: "The Printer That Pays For Itself",
-      image: "/images/hp neverstop.jpg",
+      image: "/images/hp neverstop.PNG",
       link: "https://tarsusdistribution.co.za/hp-neverstop-laser-the-printer-that-pays-for-itself/",
       company: "Tarsus Distribution"
     },
@@ -214,7 +215,7 @@ export default function Portfolio() {
     {
       title: "Energy-Efficient Cooling",
       description: "How to stay cool the energy-efficient way",
-      image: "/images/stay cool lg.jpg",
+      image: "/images/stay cool lg.PNG",
       link: "https://www.engineeringnews.co.za/article/how-to-stay-cool-the-energy-efficient-way-2022-10-27/rep_id:4136",
       company: "LG Electronics"
     },
@@ -229,7 +230,7 @@ export default function Portfolio() {
     {
       title: "School Safety Solutions",
       description: "How a Single Point of Entry Supports Safe School Environments",
-      image: "/images/single point of entry axis.PNG",
+      image: "/images/single point of entry.PNG",
       link: "https://securityreviewmag.com/?p=24924",
       company: "Axis Communications"
     },
@@ -275,6 +276,20 @@ export default function Portfolio() {
 
   const companies = Object.keys(itemsByCompany);
 
+  const toggleCompany = (company: string) => {
+    setExpandedCompanies(prev => ({
+      ...prev,
+      [company]: !prev[company]
+    }));
+  };
+
+  const toggleShowMore = (company: string) => {
+    setShowMoreCompany(prev => ({
+      ...prev,
+      [company]: !prev[company]
+    }));
+  };
+
   return (
     <section id="portfolio" className="py-20 bg-gradient-to-br from-[#54626f] to-[#3b4957]">
       <div className="container mx-auto px-6">
@@ -289,38 +304,63 @@ export default function Portfolio() {
         </motion.h2>
         
         {companies.map((company, companyIndex) => (
-          <div key={company} className="mb-16">
-            <motion.h3
-              className="text-2xl font-semibold mb-8 text-[#c55e73] border-b border-[#c55e73] pb-2"
+          <div key={company} className="mb-8">
+            <motion.button
+              onClick={() => toggleCompany(company)}
+              className="w-full text-left"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: companyIndex * 0.1 }}
               viewport={{ once: true }}
             >
-              {company}
-            </motion.h3>
+              <h3 className="text-2xl font-semibold mb-8 text-[#c55e73] border-b border-[#c55e73] pb-2 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span>{expandedCompanies[company] ? '▼' : '▶'}</span>
+                  <span>{company}</span>
+                  <span className="ml-2 px-3 py-1 text-sm bg-gray-800 rounded-full text-white">
+                    Show {portfolioItems.filter(item => item.company === company).length} articles
+                  </span>
+                </div>
+              </h3>
+            </motion.button>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {itemsByCompany[company].map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-[#212a32] rounded-lg shadow-lg overflow-hidden"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Image src={item.image} alt={item.title} width={300} height={200} className="w-full h-48 object-cover" />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold mb-2 text-[#c55e73]">{item.title}</h3>
-                    <p className="text-white mb-4">{item.description}</p>
-                    <Link href={item.link} target="_blank" rel="noopener noreferrer" className="text-[#b66091] hover:text-[#c55e73] transition duration-300">
-                      Read More
-                    </Link>
+            {expandedCompanies[company] && (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {itemsByCompany[company]
+                    .slice(0, showMoreCompany[company] ? undefined : 3)
+                    .map((item, index) => (
+                    <motion.div
+                      key={index}
+                      className="bg-[#212a32] rounded-lg shadow-lg overflow-hidden"
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <Image src={item.image} alt={item.title} width={300} height={200} className="w-full h-48 object-cover" />
+                      <div className="p-6">
+                        <h3 className="text-xl font-semibold mb-2 text-[#c55e73]">{item.title}</h3>
+                        <p className="text-white mb-4">{item.description}</p>
+                        <Link href={item.link} target="_blank" rel="noopener noreferrer" className="text-[#b66091] hover:text-[#c55e73] transition duration-300">
+                          Read Article
+                        </Link>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+                {itemsByCompany[company].length > 3 && (
+                  <div className="text-center mt-8">
+                    <button
+                      onClick={() => toggleShowMore(company)}
+                      className="bg-[#c55e73] hover:bg-[#b66091] text-white px-6 py-2 rounded-full transition-colors"
+                    >
+                      {showMoreCompany[company] ? 'Show less' : 'Show more'}
+                    </button>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                )}
+              </>
+            )}
           </div>
         ))}
       </div>

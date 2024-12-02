@@ -22,18 +22,19 @@ export default function Contact() {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <p className="text-center mb-8 text-white">
-            Feel free to reach out to me for any inquiries or opportunities.
-          </p>
+          <p className="text-center mb-8 text-white">Feel free to reach out to me for any inquiries or opportunities.</p>
           <div className="space-y-4 text-white">
             <p className="flex items-center justify-center">
-              <span className="font-semibold mr-2">Email:</span> richardvdmerwe@gmail.com
+              <span className="font-semibold mr-2">Email:</span>
+              richardvdmerwe@gmail.com
             </p>
             <p className="flex items-center justify-center">
-              <span className="font-semibold mr-2">Phone:</span> 071 208 6373
+              <span className="font-semibold mr-2">Phone:</span>
+              071 208 6373
             </p>
             <p className="flex items-center justify-center">
-              <span className="font-semibold mr-2">Location:</span> Cape Town, South Africa
+              <span className="font-semibold mr-2">Location:</span>
+              Cape Town, South Africa
             </p>
           </div>
         </motion.div>
@@ -41,4 +42,3 @@ export default function Contact() {
     </section>
   )
 }
-

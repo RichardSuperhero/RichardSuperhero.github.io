@@ -48,8 +48,7 @@ export default function About() {
               concepts with business strategies — and resonate with both experts and everyday readers.
             </p>
             <p className="text-lg mb-6 text-white">
-              With a background in thought leadership and content development, I've contributed to publications that explore pressing 
-              industry trends, from economic insights to advancements in technology. My process is grounded in research, collaboration, 
+              I've contributed to publications that explore pressing industry trends, from economic insights to advancements in technology. My process is grounded in research, collaboration, 
               and an ability to translate intricate subjects into meaningful, actionable material.
             </p>
             <p className="text-lg mb-6 text-white">

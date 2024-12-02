@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-export default function Skills() {
+export default function Services() {
   const services = [
     {
       title: "Content Strategy",
@@ -39,7 +39,7 @@ export default function Skills() {
   ]
 
   return (
-    <section id="skills" className="py-20 bg-[#212a32]">
+    <section id="services" className="py-20 bg-[#212a32]">
       <div className="container mx-auto px-6">
         <motion.h2 
           className="text-4xl font-bold mb-12 text-center text-white"

@@ -1,8 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 export default function Experience() {
+  const [expandedItems, setExpandedItems] = useState<{ [key: string]: boolean }>({});
+
+  const toggleExpand = (index: number) => {
+    setExpandedItems(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
+  };
+
   const experiences = [
     {
       title: "Senior Associate: Thought Leadership Specialist",
@@ -20,59 +30,40 @@ export default function Experience() {
         "Edited Monthly Economic Outlook and other notable reports",
         "Collaborated with design teams for visual elements",
         "Optimized publications for online platforms and SEO"
-      ]
+      ],
+      image: "/images/placeholder.jpg"
     },
     {
       title: "Freelance Writer",
       company: "Self-Employed",
       period: "April 2023 – December 2023",
-      description: `Since I started freelancing full-time in January 2023, I have completed various internal financial 
+      description: `During this time as a freelance writer, I completed various internal financial 
         advice playbooks for Liberty (helping their financial advisors understand their investor market), thought 
         leadership articles for private equity firms, and a range of other content for financial institutions 
         and investment platforms in South Africa, such as Stanlib and Inn8. 
         
-        I was also the lead press release writer for Inn8's latest Investment Summit.`,
+        I was also the lead press release writer for Inn8's Investment Summit.`,
       responsibilities: [
         "Created financial advice playbooks for Liberty",
         "Wrote thought leadership articles for private equity firms",
         "Produced content for Stanlib and Inn8",
         "Led press release writing for Inn8's Investment Summit"
-      ]
+      ],
+      image: "/images/placeholder.jpg"
     },
     {
       title: "Content Producer",
       company: "ClickGUARD",
       period: "February 2023 – April 2023",
-      description: `During my brief 3 months as the Content Producer at ClickGUARD, I was responsible for blog posts, 
+      description: `As the Content Producer at <a href="https://www.clickguard.com/blog" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">ClickGUARD</a>, I was responsible for blog posts, 
         social media copy, mailers, and the content strategy for the company as a whole. My blog posts consistently 
-        achieved top 3 Google search rankings in their respective categories.
-        
-        Before the company's entire marketing department was retrenched, I wrote and edited all blog posts from 
-        Feb–Mar 2023 on www.clickguard.com/blog.`,
-      responsibilities: [
-        "What is Click Fraud? (Lead magnet landing page)",
-        "The Marketer's Handbook to Google Search Ads",
-        "Top 5 Benefits of Facebook Ads for your business",
-        "Mastering Shopping Ads: A Complete Guide for Marketers"
-      ],
-      links: [
-        {
-          text: "What is Click Fraud?",
-          url: "https://www.clickguard.com/what-is-click-fraud"
-        },
-        {
-          text: "The Marketer's Handbook to Google Search Ads",
-          url: "https://www.clickguard.com/blog/marketers-handbook-to-google-search-ads/"
-        },
-        {
-          text: "Top 5 Benefits of Facebook Ads",
-          url: "https://www.clickguard.com/blog/facebook-ads-for-your-business/"
-        },
-        {
-          text: "Mastering Shopping Ads Guide",
-          url: "https://www.clickguard.com/blog/how-to-setup-google-shopping-ads/"
-        }
-      ]
+        achieved top 3 Google search rankings in their respective categories. Some examples include:
+
+        • <a href="https://www.clickguard.com/what-is-click-fraud" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">What is Click Fraud?</a> (Lead magnet landing page rework)
+        • <a href="https://www.clickguard.com/blog/marketers-handbook-to-google-search-ads/" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">The Marketer's Handbook to Google Search Ads</a>
+        • <a href="https://www.clickguard.com/blog/facebook-ads-for-your-business/" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">Top 5 Benefits of Facebook Ads for your business</a>
+        • <a href="https://www.clickguard.com/blog/how-to-setup-google-shopping-ads/" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">Mastering Shopping Ads: A Complete Guide for Marketers</a>`,
+      image: "/images/placeholder.jpg"
     },
     {
       title: "Tech Copywriter",
@@ -95,7 +86,8 @@ export default function Experience() {
         "Created thought leadership content and feature articles",
         "Conducted research and interviews with business leaders",
         "Served as Growth Lab president, organizing leadership initiatives"
-      ]
+      ],
+      image: "/images/placeholder.jpg"
     }
   ]
 
@@ -103,7 +95,7 @@ export default function Experience() {
     <section id="experience" className="py-20 bg-gradient-to-br from-[#3b4957] to-[#54626f]">
       <div className="container mx-auto px-6">
         <motion.h2 
-          className="text-4xl font-bold mb-12 text-center text-white"
+          className="text-4xl font-bold mb-8 text-center text-white"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -111,47 +103,50 @@ export default function Experience() {
         >
           Work Experience
         </motion.h2>
-        <div className="space-y-16">
+        <div className="space-y-4">
           {experiences.map((exp, index) => (
             <motion.div 
               key={index}
-              className="bg-[#212a32] rounded-lg shadow-lg p-8"
+              className="bg-[#2a3640] rounded-lg p-6 shadow-lg"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
-              <p className="text-lg text-gray-300 mb-4">{exp.company}</p>
-              <p className="text-md text-gray-400 mb-6">{exp.period}</p>
-              {exp.description.split('\n\n').map((paragraph, i) => (
-                <p key={i} className="text-gray-300 mb-4 whitespace-pre-line">
-                  {paragraph.trim()}
-                </p>
-              ))}
-              <ul className="list-disc list-inside text-gray-300 mt-4 space-y-2">
-                {exp.responsibilities.map((resp, i) => (
-                  <li key={i}>{resp}</li>
-                ))}
-              </ul>
-              {exp.links && (
-                <div className="mt-6">
-                  <h4 className="text-white font-semibold mb-3">Featured Articles:</h4>
-                  <ul className="space-y-2">
-                    {exp.links.map((link, i) => (
-                      <li key={i}>
-                        <a 
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-blue-400 hover:text-blue-300 transition-colors"
-                        >
-                          {link.text}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
+              <div className="flex justify-between">
+                <div className="flex-grow pr-4">
+                  <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
+                  <p className="text-lg text-gray-300">{exp.company}</p>
+                  <button
+                    onClick={() => toggleExpand(index)}
+                    className="mt-2 px-6 py-2 bg-[#c55e73] text-white rounded-full hover:bg-[#d47288] transition-colors duration-300 text-sm"
+                  >
+                    {expandedItems[index] ? 'Show Less' : 'Show More'}
+                  </button>
                 </div>
+                <div className="w-32 h-32 flex-shrink-0">
+                  <img src={exp.image} alt="" className="w-full h-full object-cover rounded-lg" />
+                </div>
+              </div>
+              
+              {expandedItems[index] && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-2"
+                >
+                  <p className="text-md text-gray-400 mb-2">{exp.period}</p>
+                  <div className="text-gray-300" dangerouslySetInnerHTML={{ __html: exp.description.replace(/\n\s*•/g, '<br>•') }} />
+                  {exp.responsibilities && (
+                    <ul className="list-disc list-inside text-gray-300 mt-4 space-y-2">
+                      {exp.responsibilities.map((resp, i) => (
+                        <li key={i}>{resp}</li>
+                      ))}
+                    </ul>
+                  )}
+                </motion.div>
               )}
             </motion.div>
           ))}

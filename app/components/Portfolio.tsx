@@ -291,10 +291,10 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="py-20 bg-gradient-to-br from-[#54626f] to-[#3b4957]">
+    <section id="portfolio" className="py-20 bg-gradient-to-br from-[#3b4957] to-[#54626f]">
       <div className="container mx-auto px-6">
         <motion.h2 
-          className="text-4xl font-bold mb-12 text-center text-white"
+          className="text-4xl font-bold mb-4 text-center text-white"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -304,7 +304,7 @@ export default function Portfolio() {
         </motion.h2>
         
         {companies.map((company, companyIndex) => (
-          <div key={company} className="mb-8">
+          <div key={company} className="mb-4">
             <motion.button
               onClick={() => toggleCompany(company)}
               className="w-full text-left"
@@ -313,7 +313,7 @@ export default function Portfolio() {
               transition={{ duration: 0.5, delay: companyIndex * 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-semibold mb-8 text-[#c55e73] border-b border-[#c55e73] pb-2 flex items-center justify-between">
+              <h3 className="text-2xl font-semibold mb-4 text-[#c55e73] border-b border-[#c55e73] pb-2 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span>{expandedCompanies[company] ? '▼' : '▶'}</span>
                   <span>{company}</span>

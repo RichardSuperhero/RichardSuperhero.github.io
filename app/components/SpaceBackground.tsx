@@ -22,6 +22,10 @@ const SpaceBackground = () => {
         renderer.setPixelRatio(window.devicePixelRatio);
         mountRef.current.appendChild(renderer.domElement);
 
+        // Set canvas to fill container
+        renderer.domElement.style.width = '100%';
+        renderer.domElement.style.height = '100%';
+
         // Lighting
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.1); // Keep low for asteroids
         scene.add(ambientLight);
@@ -279,7 +283,7 @@ const SpaceBackground = () => {
         };
     }, []);
 
-    return <div ref={mountRef} className="absolute top-0 left-0 w-full h-full" style={{ minHeight: '100vh' }} />;
+    return <div ref={mountRef} className="absolute inset-0" />;
 };
 
 export default SpaceBackground;

@@ -216,14 +216,18 @@ export default function Hero() {
             </p>
           </motion.div>
           <motion.div
-            className="text-center pointer-events-auto"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 3.6 }}
+            className="flex justify-center"
           >
-            <Link href="/richard-van-der-merwe-cv.pdf" download className="bg-[#a14d7c] hover:bg-[#d16b85] text-white font-bold py-2 px-4 rounded transition duration-300 font-roboto">
+            <a
+              href="/Richard_CV.pdf"
+              download
+              className="px-6 py-3 bg-[#c55e73] text-white rounded-full hover:bg-[#d47288] transition-colors duration-300"
+            >
               Download CV
-            </Link>
+            </a>
           </motion.div>
           <div className="h-16"></div>
         </div>

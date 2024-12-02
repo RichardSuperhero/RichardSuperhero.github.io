@@ -10,25 +10,25 @@ export default function WebAppGallery() {
       title: "Interactive Data Visualization",
       description: "A dynamic chart showcasing complex data relationships",
       image: "/placeholder.svg?height=300&width=500",
-      link: "/web-app/data-viz"
+      link: "/projects/data-viz"
     },
     {
       title: "AI-Powered Chatbot",
       description: "An intelligent conversational interface for customer support",
       image: "/placeholder.svg?height=300&width=500",
-      link: "/web-app/chatbot"
+      link: "/projects/chatbot"
     },
     {
       title: "3D Product Configurator",
       description: "Customizable 3D product viewer with real-time updates",
       image: "/placeholder.svg?height=300&width=500",
-      link: "/web-app/3d-configurator"
+      link: "/projects/3d-configurator"
     },
     {
       title: "Augmented Reality Showcase",
       description: "AR-enabled product demonstrations for immersive experiences",
       image: "/placeholder.svg?height=300&width=500",
-      link: "/web-app/ar-showcase"
+      link: "/projects/ar-showcase"
     }
   ]
 

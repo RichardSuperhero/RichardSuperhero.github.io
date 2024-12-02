@@ -31,10 +31,11 @@ export default function Experience() {
         "Collaborated with design teams for visual elements",
         "Optimized publications for online platforms and SEO"
       ],
-      image: "/images/placeholder.jpg"
+      image: "/images/PwC-Logo.jpg",
+      url: "https://www.pwc.co.za/"
     },
     {
-      title: "Freelance Writer",
+      title: "Financial Writer",
       company: "Self-Employed",
       period: "April 2023 – December 2023",
       description: `During this time as a freelance writer, I completed various internal financial 
@@ -49,7 +50,8 @@ export default function Experience() {
         "Produced content for Stanlib and Inn8",
         "Led press release writing for Inn8's Investment Summit"
       ],
-      image: "/images/placeholder.jpg"
+      image: "/images/INN8-Invest.jpg",
+      url: "https://www.inn8.co.za"
     },
     {
       title: "Content Producer",
@@ -63,7 +65,8 @@ export default function Experience() {
         • <a href="https://www.clickguard.com/blog/marketers-handbook-to-google-search-ads/" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">The Marketer's Handbook to Google Search Ads</a>
         • <a href="https://www.clickguard.com/blog/facebook-ads-for-your-business/" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">Top 5 Benefits of Facebook Ads for your business</a>
         • <a href="https://www.clickguard.com/blog/how-to-setup-google-shopping-ads/" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">Mastering Shopping Ads: A Complete Guide for Marketers</a>`,
-      image: "/images/placeholder.jpg"
+      image: "/images/clickguard logo.png",
+      url: "https://www.clickguard.com/blog/"
     },
     {
       title: "Tech Copywriter",
@@ -87,7 +90,8 @@ export default function Experience() {
         "Conducted research and interviews with business leaders",
         "Served as Growth Lab president, organizing leadership initiatives"
       ],
-      image: "/images/placeholder.jpg"
+      image: "/images/Clockwork-Logo.jpg",
+      url: "https://clockworkmedia.co.za/"
     }
   ]
 
@@ -115,7 +119,16 @@ export default function Experience() {
             >
               <div className="flex justify-between">
                 <div className="flex-grow pr-4">
-                  <h3 className="text-2xl font-bold text-white mb-2">{exp.title}</h3>
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    <a 
+                      href={exp.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="hover:text-[#c55e73] transition-colors duration-300"
+                    >
+                      {exp.title}
+                    </a>
+                  </h3>
                   <p className="text-lg text-gray-300">{exp.company}</p>
                   <button
                     onClick={() => toggleExpand(index)}
@@ -124,8 +137,8 @@ export default function Experience() {
                     {expandedItems[index] ? 'Show Less' : 'Show More'}
                   </button>
                 </div>
-                <div className="w-32 h-32 flex-shrink-0">
-                  <img src={exp.image} alt="" className="w-full h-full object-cover rounded-lg" />
+                <div className="w-32 h-32 flex-shrink-0 bg-white rounded-lg p-2">
+                  <img src={exp.image} alt={`${exp.company} logo`} className="w-full h-full object-contain rounded-lg" />
                 </div>
               </div>
               

@@ -176,13 +176,13 @@ export default function Hero() {
               </div>
             </h1>
             <motion.p 
-              className="mt-3 text-2xl mb-24 text-gray-300 font-roboto"
+              className="mt-3 text-2xl mb-24 text-gray-300 font-roboto italic"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 2.4 }}
               style={{ marginLeft: '1em' }}
             >
-              Thought Leadership Specialist<br /><br /><br />
+              Content Specialist<br /><br /><br />
             </motion.p>
           </motion.div>
         </div>
@@ -198,7 +198,7 @@ export default function Hero() {
           >
             <p className="mt-6 text-2xl text-gray-300 max-w-3xl mx-auto text-center leading-tight font-roboto">
               <span className="block">
-                Thought leadership isn't just about <strong>content</strong>.
+                What we write is about more than <strong>content</strong>.
               </span>
               <span className="block">
                 It's about turning data into <strong>strategy</strong>,

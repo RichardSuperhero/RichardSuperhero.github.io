@@ -18,7 +18,7 @@ export default function About() {
         </motion.h2>
         <div className="flex flex-col md:flex-row items-center md:items-start gap-8">
           <motion.div 
-            className="w-full md:w-1/3"
+            className="w-full md:w-1/4"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
@@ -35,27 +35,27 @@ export default function About() {
             />
           </motion.div>
           <motion.div 
-            className="w-full md:w-2/3"
+            className="w-full md:w-3/4"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
+            <br></br><br></br>
             <p className="text-lg mb-6 text-white">
-              As a Senior Associate: Thought Leadership Specialist for Internal Firm Services at PwC South Africa, 
-              I worked closely with cross-functional teams across PwC's lines of service to lead in the development, 
-              writing, and editing of all the firm's flagship reports and other content such as the African Business Agenda, 
-              Economic Outlook, Building Public Trust, and more.
+              Great content doesn't just inform—it influences.  With a strong background in tech copywriting and content 
+              production, I specialise in creating compelling narratives that bridge complex technological 
+              concepts with business strategies — and resonate with both experts and everyday readers.
             </p>
             <p className="text-lg mb-6 text-white">
-              My role allowed me to combine strategic thinking with creative execution, delivering impactful, 
-              high-quality publications that supported PwC's brand and thought leadership goals. With a strong 
-              background in tech copywriting and content production, I specialize in creating compelling narratives 
-              that bridge complex technological concepts with business strategies.
+              With a background in thought leadership and content development, I've contributed to publications that explore pressing 
+              industry trends, from economic insights to advancements in technology. My process is grounded in research, collaboration, 
+              and an ability to translate intricate subjects into meaningful, actionable material.
             </p>
-            <p className="text-lg text-white">
-              Based in Cape Town, South Africa, I bring a unique perspective to thought leadership, 
-              blending local insights with global trends to create content that resonates with diverse audiences.
+            <p className="text-lg mb-6 text-white">
+              Whether shaping long-form reports or quick-turn editorial pieces, I focus on producing work that is precise, engaging, 
+              and aligned with strategic goals. Content, at its best, is a medium for clarity and connection. That is the standard 
+              I bring to every project.
             </p>
           </motion.div>
         </div>

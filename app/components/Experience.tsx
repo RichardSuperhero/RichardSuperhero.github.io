@@ -17,7 +17,7 @@ export default function Experience() {
     {
       title: "Senior Associate: Thought Leadership Specialist",
       company: "PwC South Africa – Internal Firm Services",
-      period: "[Start Date] – [End Date]",
+      period: "December 2022 – November 2023",
       description: `As a Senior Associate: Thought Leadership Specialist for Internal Firm Services at PwC South Africa, 
         I worked closely with cross-functional teams across PwC's lines of service to lead in the development, 
         writing, and editing of all the firm's flagship reports and other content such as the African Business 

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { supabase } from './supabaseClient'
 
 function DigitBox({ digit }: { digit: string }) {
   return (
@@ -26,30 +27,33 @@ export default function ViewCounter() {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
-    const updateCount = () => {
+    const updateCount = async () => {
       const deviceId = generateDeviceId()
-      const viewsKey = 'totalViews'
-      const viewedDevicesKey = 'viewedDevices'
-      
-      // Get or initialize viewed devices set
-      const viewedDevicesStr = localStorage.getItem(viewedDevicesKey)
-      const viewedDevices = viewedDevicesStr ? new Set(JSON.parse(viewedDevicesStr)) : new Set()
-      
-      // Get current total views
-      const currentViews = parseInt(localStorage.getItem(viewsKey) || '0')
-      
-      // Only count if this device hasn't been seen before
-      if (!viewedDevices.has(deviceId)) {
-        const newCount = currentViews + 1
-        viewedDevices.add(deviceId)
-        
-        // Update storage
-        localStorage.setItem(viewsKey, newCount.toString())
-        localStorage.setItem(viewedDevicesKey, JSON.stringify([...viewedDevices]))
-        
-        setCount(newCount)
+
+      // Check if the user has been counted
+      const { data: existingUser } = await supabase
+        .from('views')
+        .select('user_id')
+        .eq('user_id', deviceId)
+        .single()
+
+      if (!existingUser) {
+        // Increment the view count
+        await supabase.from('views').insert([{ user_id: deviceId }])
+
+        // Fetch the total view count
+        const { count: totalViews } = await supabase
+          .from('views')
+          .select('*', { count: 'exact' })
+
+        setCount(totalViews)
       } else {
-        setCount(currentViews)
+        // Fetch the total view count
+        const { count: totalViews } = await supabase
+          .from('views')
+          .select('*', { count: 'exact' })
+
+        setCount(totalViews)
       }
     }
 

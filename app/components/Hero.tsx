@@ -189,9 +189,9 @@ export default function Hero() {
       </section>
 
       <section className="bg-gradient-to-br from-[#212a32] via-[#3b4957] to-[#54626f] -mt-24">
-        <div className="container mx-auto px-6 pt-20">
+        <div className="container mx-auto px-6 pt-16">
           <motion.div
-            className="max-w-2xl mx-auto mb-20"
+            className="max-w-2xl mx-auto mb-16"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 3.0 }}
@@ -229,7 +229,7 @@ export default function Hero() {
               Download CV
             </a>
           </motion.div>
-          <div className="h-16"></div>
+          <div className="h-12"></div>
         </div>
       </section>
     </>

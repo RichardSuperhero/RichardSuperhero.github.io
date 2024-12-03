@@ -57,14 +57,14 @@ export default function Experience() {
       title: "Content Producer",
       company: "ClickGUARD",
       period: "February 2023 – April 2023",
-      description: `As the Content Producer at <a href="https://www.clickguard.com/blog" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">ClickGUARD</a>, I was responsible for blog posts, 
+      description: `As the Content Producer at <a href="https://www.clickguard.com/blog" target="_blank" rel="noopener noreferrer" style="color: #c55e73">ClickGUARD</a>, I was responsible for blog posts, 
         social media copy, mailers, and the content strategy for the company as a whole. My blog posts consistently 
         achieved top 3 Google search rankings in their respective categories. Some examples include:
 
-        • <a href="https://www.clickguard.com/what-is-click-fraud" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">What is Click Fraud?</a> (Lead magnet landing page rework)
-        • <a href="https://www.clickguard.com/blog/marketers-handbook-to-google-search-ads/" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">The Marketer's Handbook to Google Search Ads</a>
-        • <a href="https://www.clickguard.com/blog/facebook-ads-for-your-business/" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">Top 5 Benefits of Facebook Ads for your business</a>
-        • <a href="https://www.clickguard.com/blog/how-to-setup-google-shopping-ads/" target="_blank" rel="noopener noreferrer" className="text-[#c55e73] hover:text-[#d47288]">Mastering Shopping Ads: A Complete Guide for Marketers</a>`,
+        • <a href="https://www.clickguard.com/what-is-click-fraud" target="_blank" rel="noopener noreferrer" style="color: #c55e73">What is Click Fraud?</a> 
+        • <a href="https://www.clickguard.com/blog/marketers-handbook-to-google-search-ads/" target="_blank" rel="noopener noreferrer" style="color: #c55e73">The Marketer's Handbook to Google Search Ads</a>
+        • <a href="https://www.clickguard.com/blog/facebook-ads-for-your-business/" target="_blank" rel="noopener noreferrer" style="color: #c55e73">Top 5 Benefits of Facebook Ads for your business</a>
+        • <a href="https://www.clickguard.com/blog/how-to-setup-google-shopping-ads/" target="_blank" rel="noopener noreferrer" style="color: #c55e73">Mastering Shopping Ads: A Complete Guide for Marketers</a>`,
       image: "/images/clickguard logo.png",
       url: "https://www.clickguard.com/blog/"
     },

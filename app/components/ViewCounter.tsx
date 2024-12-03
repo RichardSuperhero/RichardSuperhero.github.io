@@ -12,26 +12,44 @@ function DigitBox({ digit }: { digit: string }) {
   )
 }
 
+function generateDeviceId() {
+  const screen = `${window.screen.width},${window.screen.height},${window.screen.colorDepth}`
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+  const language = navigator.language
+  const platform = navigator.platform
+  const userAgent = navigator.userAgent
+
+  return btoa(`${screen}-${timezone}-${language}-${platform}-${userAgent}`)
+}
+
 export default function ViewCounter() {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
     const updateCount = () => {
-      // Get current count
-      const storedCount = localStorage.getItem('viewCount')
-      const currentCount = storedCount ? parseInt(storedCount) : 0
+      const deviceId = generateDeviceId()
+      const viewsKey = 'totalViews'
+      const viewedDevicesKey = 'viewedDevices'
       
-      // Only update if we haven't counted this session
-      const hasCountedKey = 'hasCountedView'
-      const hasCounted = sessionStorage.getItem(hasCountedKey)
+      // Get or initialize viewed devices set
+      const viewedDevicesStr = localStorage.getItem(viewedDevicesKey)
+      const viewedDevices = viewedDevicesStr ? new Set(JSON.parse(viewedDevicesStr)) : new Set()
       
-      if (!hasCounted) {
-        const newCount = currentCount + 1
-        localStorage.setItem('viewCount', newCount.toString())
-        sessionStorage.setItem(hasCountedKey, 'true')
+      // Get current total views
+      const currentViews = parseInt(localStorage.getItem(viewsKey) || '0')
+      
+      // Only count if this device hasn't been seen before
+      if (!viewedDevices.has(deviceId)) {
+        const newCount = currentViews + 1
+        viewedDevices.add(deviceId)
+        
+        // Update storage
+        localStorage.setItem(viewsKey, newCount.toString())
+        localStorage.setItem(viewedDevicesKey, JSON.stringify([...viewedDevices]))
+        
         setCount(newCount)
       } else {
-        setCount(currentCount)
+        setCount(currentViews)
       }
     }
 

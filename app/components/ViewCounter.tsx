@@ -16,16 +16,26 @@ export default function ViewCounter() {
   const [count, setCount] = useState(0)
 
   useEffect(() => {
-    // Initialize count from localStorage or default to 0
-    const storedCount = localStorage.getItem('viewCount')
-    const initialCount = storedCount ? parseInt(storedCount) : 0
-    
-    // Increment count
-    const newCount = initialCount + 1
-    setCount(newCount)
-    
-    // Store new count
-    localStorage.setItem('viewCount', newCount.toString())
+    const updateCount = () => {
+      // Get current count
+      const storedCount = localStorage.getItem('viewCount')
+      const currentCount = storedCount ? parseInt(storedCount) : 0
+      
+      // Only update if we haven't counted this session
+      const hasCountedKey = 'hasCountedView'
+      const hasCounted = sessionStorage.getItem(hasCountedKey)
+      
+      if (!hasCounted) {
+        const newCount = currentCount + 1
+        localStorage.setItem('viewCount', newCount.toString())
+        sessionStorage.setItem(hasCountedKey, 'true')
+        setCount(newCount)
+      } else {
+        setCount(currentCount)
+      }
+    }
+
+    updateCount()
   }, [])
 
   // Convert count to 7-digit string with leading zeros

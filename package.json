@@ -17,6 +17,7 @@
     "@types/three": "^0.158.3",
     "autoprefixer": "^10.4.0",
     "framer-motion": "^10.16.4",
+    "lodash.debounce": "^4.0.8",
     "next": "^14.0.3",
     "postcss": "^8.4.0",
     "react": "^18.2.0",

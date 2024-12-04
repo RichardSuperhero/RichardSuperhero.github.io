@@ -13,14 +13,36 @@ function DigitBox({ digit }: { digit: string }) {
   )
 }
 
-function generateDeviceId() {
-  const screen = `${window.screen.width},${window.screen.height},${window.screen.colorDepth}`
-  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-  const language = navigator.language
-  const platform = navigator.platform
-  const userAgent = navigator.userAgent
+function getDeviceDetails() {
+  const screenDetails = `${window.screen.width}x${window.screen.height},${window.screen.colorDepth}`;
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const language = navigator.language;
+  const platform = navigator.platform;
+  const userAgent = navigator.userAgent;
+  const browserVersion = navigator.userAgent.match(/(firefox|msie|chrome|safari)[\/\s]?([\d.]+)/i)?.[2];
+  const deviceType = /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+  const connectionType = navigator.connection?.effectiveType || 'Unknown';
+  const referrerUrl = document.referrer;
 
-  return btoa(`${screen}-${timezone}-${language}-${platform}-${userAgent}`)
+  return {
+    screen_details: screenDetails,
+    timezone,
+    language,
+    platform,
+    user_agent: userAgent,
+    browser_version: browserVersion,
+    device_type: deviceType,
+    connection_type: connectionType,
+    referrer_url: referrerUrl,
+  };
+}
+
+async function logVisit() {
+  const deviceDetails = getDeviceDetails();
+  const deviceId = btoa(`${deviceDetails.screen_details}-${deviceDetails.timezone}-${deviceDetails.language}-${deviceDetails.platform}-${deviceDetails.user_agent}`);
+
+  // Always log the visit
+  await supabase.from('views').insert([{ user_id: deviceId, ...deviceDetails }]);
 }
 
 export default function ViewCounter() {
@@ -28,33 +50,14 @@ export default function ViewCounter() {
 
   useEffect(() => {
     const updateCount = async () => {
-      const deviceId = generateDeviceId()
+      await logVisit();
 
-      // Check if the user has been counted
-      const { data: existingUser } = await supabase
+      // Fetch the total view count
+      const { count: totalViews } = await supabase
         .from('views')
-        .select('user_id')
-        .eq('user_id', deviceId)
-        .single()
+        .select('*', { count: 'exact' })
 
-      if (!existingUser) {
-        // Increment the view count
-        await supabase.from('views').insert([{ user_id: deviceId }])
-
-        // Fetch the total view count
-        const { count: totalViews } = await supabase
-          .from('views')
-          .select('*', { count: 'exact' })
-
-        setCount(totalViews)
-      } else {
-        // Fetch the total view count
-        const { count: totalViews } = await supabase
-          .from('views')
-          .select('*', { count: 'exact' })
-
-        setCount(totalViews)
-      }
+      setCount(totalViews)
     }
 
     updateCount()

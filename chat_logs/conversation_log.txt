@@ -1,0 +1,19 @@
+### User ID Generation
+
+The `generateDeviceId` function creates a unique ID by combining and encoding the following attributes:
+
+- **Screen Details**: Width, height, color depth.
+- **Timezone**: User's timezone.
+- **Language**: Browser language.
+- **Platform**: Operating system.
+- **User Agent**: Browser and OS details.
+
+These are concatenated into a string and encoded using Base64.
+
+### Additional Information You Can Collect
+
+- **IP Address**: Requires user consent due to privacy concerns.
+- **Browser Version**: Specific version of the browser.
+- **Device Type**: Mobile, tablet, or desktop.
+- **Connection Type**: Wi-Fi, 4G, etc.
+- **Referrer URL**: The URL that referred the user to your site.

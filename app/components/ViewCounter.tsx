@@ -21,9 +21,25 @@ function getDeviceDetails() {
   const platform = navigator.platform;
   const userAgent = navigator.userAgent;
   const browserVersion = navigator.userAgent.match(/(firefox|msie|chrome|safari)[\/\s]?([\d.]+)/i)?.[2];
-  const deviceType = /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+  const deviceType = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Samsung|webOS|Windows Phone/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
   const connectionType = navigator.connection?.effectiveType || 'Unknown';
   const referrerUrl = document.referrer || 'Direct';
+  const deviceMemory = navigator.deviceMemory || 'Unknown';
+  const hardwareConcurrency = navigator.hardwareConcurrency || 'Unknown';
+
+  console.log('Device Details:', {
+    screen_details: screenDetails,
+    timezone,
+    language,
+    platform,
+    user_agent: userAgent,
+    browser_version: browserVersion,
+    device_type: deviceType,
+    connection_type: connectionType,
+    referrer_url: referrerUrl,
+    device_memory: deviceMemory,
+    hardware_concurrency: hardwareConcurrency,
+  });
 
   return {
     screen_details: screenDetails,
@@ -35,28 +51,19 @@ function getDeviceDetails() {
     device_type: deviceType,
     connection_type: connectionType,
     referrer_url: referrerUrl,
+    device_memory: deviceMemory,
+    hardware_concurrency: hardwareConcurrency,
   };
 }
 
 async function logVisit() {
   const deviceDetails = getDeviceDetails();
-  const deviceId = btoa(`${deviceDetails.screen_details}-${deviceDetails.timezone}-${deviceDetails.language}-${deviceDetails.platform}-${deviceDetails.user_agent}`);
+  const deviceId = btoa(`${deviceDetails.screen_details}-${deviceDetails.timezone}-${deviceDetails.language}-${deviceDetails.platform}-${deviceDetails.user_agent}-${deviceDetails.device_memory}-${deviceDetails.hardware_concurrency}-${deviceDetails.connection_type}-${deviceDetails.referrer_url}`);
 
   try {
-    console.log('Checking for existing user:', deviceId);
-    const { data: existingUser } = await supabase
-      .from('views')
-      .select('user_id')
-      .eq('user_id', deviceId)
-      .single();
-
-    if (!existingUser) {
-      console.log('New user, logging visit');
-      await supabase.from('views').insert([{ user_id: deviceId, ...deviceDetails }]);
-      console.log('Visit logged successfully');
-    } else {
-      console.log('Existing user, skipping log');
-    }
+    console.log('Logging visit for user:', deviceId);
+    await supabase.from('views').insert([{ user_id: deviceId, ...deviceDetails }]);
+    console.log('Visit logged successfully');
   } catch (error) {
     console.error('Error logging visit:', error);
   }
